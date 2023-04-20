@@ -4,6 +4,10 @@
 
     .header-upperContainer {
         display: flex;
+
+        @include breakpoint($xl-bp) {
+            justify-content: space-between;
+        }
     
         .header-upperContainer__logoContainer {
             display: flex;
@@ -11,9 +15,27 @@
             gap: 3.1rem;
             width: 26.5%;
 
+            @include breakpoint($xl-bp) {
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .header-upperContainer__helper {
+                display: flex;
+                gap: 3.1rem;
+            }
+
             .header-upperContainer__imgContainer {
                 width: 100%;
     
+                @include breakpoint($xl-bp) {
+                    width: 30%;
+                }
+
+                @include breakpoint($sm-bp) {
+                    width: 55%;
+                }
+
                 img {
                     width: 100%;
                     object-fit: contain;
@@ -62,6 +84,10 @@
             padding-top: 1rem;
             gap: 2.4rem;
 
+            @include breakpoint($xl-bp) {
+                display: none;
+            }
+
             p {
                 font-weight: 400;
                 font-size: 1.4rem;
@@ -73,6 +99,10 @@
 
             p:first-child {
                 width: 59%;
+
+                @include breakpoint($ssh-bp) {
+                    width: 44%;
+                }
             }
 
             p:last-child {
@@ -84,7 +114,15 @@
             display: flex;
             gap: 3rem;
             align-items: center;
-            width: 35.6%;
+            width: 36.6%;
+
+            @include breakpoint($ssh-bp) {               
+                width: 46.6%;
+            }
+
+            @include breakpoint($xl-bp) {
+                display: none;
+            }
 
             a {
                 display: flex;
@@ -134,6 +172,14 @@
         gap: 12.9rem;
         margin-top: 1.7rem;
         align-items: center;
+
+        @include breakpoint($ssh-bp) {
+            gap: 8.9rem;
+        }
+
+        @include breakpoint($xl-bp) {
+            display: none;
+        }
 
         li {
             a {

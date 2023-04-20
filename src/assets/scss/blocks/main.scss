@@ -3,9 +3,21 @@
     display: flex;
     gap: 9rem;
 
+    @include breakpoint($xl-bp) {
+        flex-direction: column-reverse;
+    }
+
+    @include breakpoint($sm-bp) {
+        gap: 2rem;
+    }
+
     .main-header__imgContainer {
         // width: 100.6rem;
         width: 52.4%;
+
+        @include breakpoint($xl-bp) {
+            width: 100%;
+        }
 
         img {
             width: 100%;
@@ -20,6 +32,24 @@
         // width: 70rem;
         padding-top: 14.7rem;
         width: 43%;
+
+        @include breakpoint($ssh-bp) {
+            padding-top: 8.7rem;
+        }
+
+        @include breakpoint($xl-bp) {
+            width: 100%;
+            padding-top: 3rem;
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+
+        @include breakpoint($sm-bp) {
+            padding-left: 2rem;
+            padding-right: 2rem;
+            padding-top: 3.8rem;
+            gap: 1.5rem;
+        }
 
 
         .main-header__geoContainer {
@@ -39,6 +69,11 @@
                 line-height: 2.7rem;
                 font-feature-settings: 'pnum' on, 'lnum' on;
                 color: #FFFFFF;
+
+                @include breakpoint($sm-bp) {
+                    font-size: 1.8rem;
+                    line-height: 2.5rem;
+                }
             }
         }
 
@@ -49,6 +84,11 @@
             letter-spacing: 0.01em;
             font-feature-settings: 'pnum' on, 'lnum' on;
             color: #FFFFFF;
+
+            @include breakpoint($sm-bp) {
+                font-size: 4rem;
+                line-height: 120%;
+            }
         }
 
         .main-header__list {
@@ -63,6 +103,11 @@
                 letter-spacing: 0.01em;
                 font-feature-settings: 'pnum' on, 'lnum' on;
                 color: #FFFFFF;
+
+                @include breakpoint($sm-bp) {
+                    font-size: 2rem;
+                    line-height: 2.7rem;
+                }
             }
 
             ul {
@@ -72,6 +117,10 @@
                 padding-left: 1.9rem;
                 width: 55%;
 
+                @include breakpoint($sm-bp) {
+                    width: 100%;
+                }
+
                 li {
                     position: relative;
                     font-weight: 400;
@@ -80,6 +129,11 @@
                     letter-spacing: 0.01em;
                     font-feature-settings: 'pnum' on, 'lnum' on;
                     color: #FFFFFF;
+
+                    @include breakpoint($sm-bp) {
+                        font-size: 1.6rem;
+                        line-height: 2.2rem;
+                    }
                 }
 
                 li:before {
@@ -104,6 +158,19 @@
     padding-bottom: 2.8rem;
     gap: 11rem;
 
+    @include breakpoint($ssh-bp) {
+        gap: 3rem;
+    }
+
+    @include breakpoint($xl-bp) {
+        flex-direction: column;
+        padding-top: 2rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        gap: 2rem;
+    }
+
     h2 {
         font-weight: 700;
         font-size: 4.6rem;
@@ -112,6 +179,15 @@
         font-feature-settings: 'pnum' on, 'lnum' on;
         color: #FFFFFF;
         width: 34%;
+
+        @include breakpoint($xl-bp) {
+            width: 100%;
+        }
+
+        @include breakpoint($sm-bp) {
+            font-size: 4rem;
+            line-height: 120%;
+        }
     }
 
     form {
@@ -122,6 +198,14 @@
             display: flex;
             align-items: center;
             gap: 3rem;
+
+            @include breakpoint($xl-bp) {
+                flex-direction: column;
+            }
+
+            @include breakpoint($sm-bp) {
+                gap: 2rem;
+            }
 
             input {
                 background: none;
@@ -137,6 +221,33 @@
                 border-bottom: 0.1rem solid #FFFFFF;
                 padding-top: 1.2rem;
                 width: 35rem;
+
+                @include breakpoint($ssh-bp) {
+                    width: 31rem;
+                }
+
+                @include breakpoint($xl-bp) {
+                    width: 60%;
+                }
+
+                @include breakpoint($sm-bp) {
+                    width: 100%;
+                    font-size: 1.8rem;
+                    line-height: 2.5rem;
+                }
+
+                &::placeholder {
+                    font-weight: 400;
+                    font-size: 2rem;
+                    line-height: 2.7rem;
+                    font-feature-settings: 'pnum' on, 'lnum' on;
+                    color: #FFFFFF;
+
+                    @include breakpoint($sm-bp) {
+                        font-size: 1.8rem;
+                        line-height: 2.5rem;
+                    }
+                }
             }
 
             button {
@@ -153,6 +264,15 @@
                 align-items: center;
                 border: 0.1rem solid #FFFFFF;
                 border-radius: 0.6rem;
+
+                @include breakpoint($xl-bp) {
+                    width: 60%;
+                    justify-content: center;
+                }
+
+                @include breakpoint($sm-bp) {
+                    width: 100%;
+                }
 
                 svg {
                     width: 3rem;
@@ -182,6 +302,18 @@
     gap: 1rem;
     margin-top: 1.9rem;
     width: 48%;
+
+    @include breakpoint($xl-bp) {
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @include breakpoint($sm-bp) {
+        width: 100%;
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+    }
 }
 
 .checkbox-container input {
@@ -224,6 +356,10 @@
 .main-advantages {
     margin-top: 14.6rem;
 
+    @include breakpoint($xl-bp) {
+        margin-top: 9rem;
+    }
+
     h2 {
         font-weight: 700;
         font-size: 4.6rem;
@@ -231,12 +367,26 @@
         letter-spacing: 0.01em;
         font-feature-settings: 'pnum' on, 'lnum' on;
         color: #000015;
+
+        @include breakpoint($sm-bp) {
+            font-size: 4rem;
+            line-height: 120%;
+        }
     }
 
     ul {
         display: flex;
         margin-top: 4rem;
         gap: 2rem;
+
+        @include breakpoint($xl-bp) {
+            flex-wrap: wrap;
+        }
+
+        @include breakpoint($sm-bp) {
+            margin-top: 3rem;
+            gap: 1.5rem;
+        }
 
         li {
             background: #36456F;
@@ -260,6 +410,19 @@
             width: 25%;
             border: none;
 
+            @include breakpoint($xl-bp) {
+                width: 48.9%;
+            }
+
+            @include breakpoint($lb-bp) {
+                width: 100%;
+            }
+
+            @include breakpoint($sm-bp) {
+                font-size: 2rem;
+                line-height: 2.7rem;
+            }
+
             svg {
                 width: 5rem;
                 height: 5rem;
@@ -279,6 +442,11 @@
             letter-spacing: 0.01em;
             font-feature-settings: 'pnum' on, 'lnum' on;
             color: #000015;
+
+            @include breakpoint($sm-bp) {
+                font-size: 4rem;
+                line-height: 120%;
+            }
         }
 
         div {
@@ -296,6 +464,17 @@
 .main-branch {
     margin-top: 18rem;
     overflow: hidden;
+
+    @include breakpoint($xl-bp) {
+        margin-top: 9rem;
+    }
+
+    button {
+        @include breakpoint($lb-bp) {
+            display: none;
+        }
+    }
+    
 
     
 
@@ -319,6 +498,16 @@
                 color: #000015;
                 padding: 2rem 2rem 0rem 2rem;
                 min-height: 9rem;
+
+                @include breakpoint($ssh-bp) {
+                    min-height: 13.2rem;
+                }
+
+                @include breakpoint($sm-bp) {
+                    font-size: 2.4rem;
+                    line-height: 3.3rem;
+                    min-height: 9.3rem;
+                }
             }
 
             .main-branch__textContainer {
@@ -336,6 +525,11 @@
                         letter-spacing: 0.01em;
                         font-feature-settings: 'pnum' on, 'lnum' on;
                         color: #000015;
+
+                        @include breakpoint($sm-bp) {
+                            font-size: 2rem;
+                            line-height: 2.7rem;
+                        }
                     }
 
                     .main-branch__swiperSubtitle {
@@ -345,6 +539,11 @@
                         letter-spacing: 0.01em;
                         font-feature-settings: 'pnum' on, 'lnum' on;
                         color: #000015;
+
+                        @include breakpoint($sm-bp) {
+                            font-size: 1.6rem;
+                            line-height: 2.2rem;
+                        }
                     }
                 }
             }
@@ -360,6 +559,22 @@
                 width: 93%;
                 transition: all 0.4s;
 
+                @include breakpoint($ssh-bp) {
+                    width: 92%;
+                }
+
+                @include breakpoint($xl-bp) {
+                    width: 91.2%;
+                }
+
+                @include breakpoint($lb-bp) {
+                    width: 93.2%;
+                }
+
+                @include breakpoint($sm-bp) {
+                    width: 88.2%;
+                }
+
                 .main-branch__slidePrice {
                     font-weight: 600;
                     font-size: 3.2rem;
@@ -367,6 +582,11 @@
                     letter-spacing: 0.01em;
                     font-feature-settings: 'pnum' on, 'lnum' on;
                     color: #FFFFFF;
+
+                    @include breakpoint($sm-bp) {
+                        font-size: 3.2rem;
+                        line-height: 4.4rem;
+                    }
                 }
 
                 .main-branch__slideSubtitle {
@@ -377,6 +597,11 @@
                     font-feature-settings: 'pnum' on, 'lnum' on;
                     color: #FFFFFF;
                     margin-top: 1rem;
+
+                    @include breakpoint($sm-bp) {
+                        font-size: 2rem;
+                        line-height: 2.7rem;    
+                    }
                 }
 
                 button {
@@ -397,6 +622,11 @@
                     letter-spacing: 0.01em;
                     font-feature-settings: 'pnum' on, 'lnum' on;
                     color: #000015;
+
+                    @include breakpoint($sm-bp) {
+                        font-size: 2rem;
+                        line-height: 2.7rem;
+                    }
 
                     svg {
                         width: 3rem;
@@ -458,20 +688,25 @@
 }
 
 .main-licence {
-    display: flex;
     gap: 2.9rem;
     margin-top: 18.6rem;
 
-    .main-licence__textContainer {
-        width: 55%;
+    @include breakpoint($xl-bp) {
+        margin-top: 9rem;
+    }
 
-        h2 {
-            font-weight: 700;
-            font-size: 4.6rem;
-            line-height: 120%;
-            letter-spacing: 0.01em;
-            font-feature-settings: 'pnum' on, 'lnum' on;
-            color: #000015;
+    .licenceArrowLeft, .licenceArrowRight, .accreditationArrowLeft, .accreditationArrowRight {
+        @include breakpoint($xl-bp) {
+            display: none;
+        }
+    }
+
+    .main-branch__content {
+        display: flex;
+        gap: 3rem;
+
+        @include breakpoint($xl-bp) {
+            display: block;
         }
 
         p {
@@ -481,6 +716,17 @@
             font-feature-settings: 'pnum' on, 'lnum' on;
             color: #000015;
             margin-top: 4rem;
+            width: 55%;
+
+            @include breakpoint($xl-bp) {
+                width: 100%;
+            }
+
+            @include breakpoint($sm-bp) {
+                font-size: 1.8rem;
+                line-height: 2.5rem;
+                margin-top: 3rem;
+            }
         }
     }
 
@@ -488,6 +734,18 @@
 
         .swiper-wrapper {
             margin-top: 4.5rem;
+
+            @include breakpoint($sm-bp) {
+                margin-top: 2rem;
+            }
+
+            a {
+                width: 100%;
+                img {
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
         }
 
         .main-licence__arrowsContainer {
@@ -502,22 +760,35 @@
             }
         }
     }
+
+    .main-accreditation__documentContainer {
+        .swiper-wrapper {
+            margin-top: 4.5rem;
+
+            @include breakpoint($sm-bp) {
+                margin-top: 2rem;
+            }
+
+            a {
+                width: 100%;
+                img {
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
 }
 
 .main-accreditation__marginTop {
-    margin-top: 9rem;
+    margin-top: 8.5rem;
 }
 
 .main-news {
-    margin-top: 18rem;
+    margin-top: 17.5rem;
 
-    h2 {
-        font-weight: 700;
-        font-size: 4.6rem;
-        line-height: 120%;
-        letter-spacing: 0.01em;
-        font-feature-settings: 'pnum' on, 'lnum' on;
-        color: #000015;
+    @include breakpoint($xl-bp) {
+        margin-top: 9rem;
     }
 
     .main-news__contentContainer {
@@ -526,6 +797,14 @@
         gap: 2rem;
         height: 49rem;
 
+        @include breakpoint($xl-bp) {
+            flex-wrap: wrap;
+            height: max-content;
+        }
+
+        @include breakpoint($sm-bp) {
+            margin-top: 3rem;
+        }
 
         .main-news__item {
             background: #EBEDF1;
@@ -534,11 +813,40 @@
             overflow: hidden;
             transition: all 0.2s linear;
             z-index: 1;
+            width: 25%;
+
+            
+
+            @include breakpoint($ssh-bp) {
+                height: 42rem;
+            }
+
+            @include breakpoint($xl-bp) {
+                width: 48.9%;
+                height: max-content;
+                transition: none;
+            }
+
+            @include breakpoint($lb-bp) {
+                width: 100%;
+            }
 
             &:hover {
                 height: 56.6rem;
                 transition: all 0.2s linear;
+
+                @include breakpoint($ssh-bp) {
+                    height: 52.6rem;
+                }
+
+                @include breakpoint($xl-bp) {
+                    pointer-events: none;
+                    transition: none;
+                    height: max-content;
+                }
             }
+
+
         }
 
         .main-news__item:hover {}
@@ -562,6 +870,11 @@
             padding-top: 1.5rem;
             padding-left: 2rem;
             padding-right: 2rem;
+
+            @include breakpoint($sm-bp) {
+                font-size: 2rem;
+                line-height: 2.7rem;
+            }
         }
 
         .main-news__date {
@@ -575,6 +888,11 @@
             padding-top: 0.8rem;
             padding-left: 2rem;
             padding-right: 2rem;
+
+            @include breakpoint($sm-bp) {
+                font-size: 1.6rem;
+                line-height: 2.2rem;
+            }
         }
 
         .main-news__subtitle {
@@ -590,6 +908,10 @@
             margin-bottom: 5.2rem;
             height: 5.6rem;
             overflow: hidden;
+
+            @include breakpoint($sm-bp) {
+                height: max-content;
+            }
         }
 
         button {
@@ -636,6 +958,18 @@
             font-feature-settings: 'pnum' on, 'lnum' on;
             color: #FFFFFF;
             z-index: 0;
+
+            @include breakpoint($ssh-bp) {
+                margin-top: -1.9rem;
+            }
+
+            @include breakpoint($xl-bp) {
+                margin-top: 2rem;
+            }
+
+            @include breakpoint($sm-bp) {
+                width: 100%;
+            }
         }
     }
 }
@@ -643,28 +977,13 @@
 .main-howToLearn {
     margin-top: 19rem;
 
-    .main-howToLearn__title {
-        display: flex;
-        justify-content: space-between;
+    @include breakpoint($xl-bp) {
+        margin-top: 9rem;
+    }
 
-        h2 {
-            font-weight: 700;
-            font-size: 4.6rem;
-            line-height: 120%;
-            letter-spacing: 0.01em;
-            font-feature-settings: 'pnum' on, 'lnum' on;
-            color: #000015;
-        }
-
-        .main-licence__arrowsContainer {
-            display: flex;
-            gap: 2rem;
-
-            button {
-                padding: 0rem;
-                background: none;
-                border: none;
-            }
+    button {
+        @include breakpoint($xl-bp) {
+            display: none;
         }
     }
 
@@ -673,6 +992,14 @@
         margin-top: 4rem;
         gap: 2rem;
 
+        @include breakpoint($xl-bp) {
+            display: block;
+        }
+
+        @include breakpoint($sm-bp) {
+            margin-top: 3rem;
+        }
+
         p {
             font-weight: 400;
             font-size: 2rem;
@@ -680,14 +1007,49 @@
             font-feature-settings: 'pnum' on, 'lnum' on;
             color: #000015;
             width: 62.5%;
+
+            @include breakpoint($xl-bp) {
+                width: 100%;
+                margin-bottom: 2rem;
+            }
+
+            @include breakpoint($sm-bp) {
+                font-size: 1.8rem;
+                line-height: 2.5rem;
+            }
+        }
+    }
+
+    .main-howToLearn__swiper {
+
+        .swiper-wrapper {
+
+            a {
+                width: 100%;
+                
+                img {
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
         }
     }
 }
 
 .main-consultation {
-    padding: 8rem 10rem 7rem 10rem;
+    padding-top: 8rem;
+    padding-bottom: 7rem;
     background: #36456F;
     margin-top: 18rem;
+
+    @include breakpoint($xl-bp) {
+        margin-top: 10rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
 
     h2 {
         font-weight: 700;
@@ -696,14 +1058,31 @@
         letter-spacing: 0.01em;
         font-feature-settings: 'pnum' on, 'lnum' on;
         color: #FFFFFF;
+
+        @include breakpoint($sm-bp) {
+            font-size: 4rem;
+            line-height: 120%;
+        }
     }
 
     .main-consultation__content {
         margin-top: 4rem;
         display: flex;
 
+        @include breakpoint($xl-bp) {
+            flex-direction: column;
+        }
+
+        @include breakpoint($sm-bp) {
+            margin-top: 2rem;
+        }
+
         .main-consultation__contactBlock {
             width: 47%;
+
+            @include breakpoint($xl-bp) {
+                width: 100%;
+            }
 
             p {
                 font-weight: 400;
@@ -712,12 +1091,27 @@
                 font-feature-settings: 'pnum' on, 'lnum' on;
                 color: #FFFFFF;
                 width: 58%;
+
+                @include breakpoint($sm-bp) {
+                    width: 100%;
+                    font-size: 1.8rem;
+                    line-height: 2.5rem;
+                }
             }
 
             .main-consultation__links {
                 margin-top: 3rem;
                 display: flex;
                 gap: 3rem;
+
+                @include breakpoint($xl-bp) {
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+
+                @include breakpoint($sm-bp) {
+                    margin-top: 1.5rem;
+                }
 
 
                 a {
@@ -728,12 +1122,21 @@
                     font-feature-settings: 'pnum' on, 'lnum' on;
                     color: #FFFFFF;
                     text-decoration: none;
+
+                    @include breakpoint($sm-bp) {
+                        font-size: 2.4rem;
+                        line-height: 3.3rem;
+                    }
                 }
             }
         }
 
         form {
             width: 53%;
+
+            @include breakpoint($xl-bp) {
+                width: 100%;
+            }
 
             input {
                 font-weight: 400;
@@ -747,12 +1150,35 @@
                 border: none;
                 border-bottom: 0.1rem solid #FFFFFF;
                 width: 100%;
+
+                @include breakpoint($sm-bp) {
+                    font-size: 1.8rem;
+                    line-height: 2.5rem;
+                }
+
+                &::placeholder {
+                    font-weight: 400;
+                    font-size: 2rem;
+                    line-height: 2.7rem;
+                    font-feature-settings: 'pnum' on, 'lnum' on;
+                    color: #FFFFFF;
+
+                    @include breakpoint($sm-bp) {
+                        font-size: 1.8rem;
+                        line-height: 2.5rem;
+                    }
+                }
             }
 
             .main-consultation__inpHelper {
                 display: flex;
                 gap: 2rem;
                 margin-bottom: 3rem;
+
+                @include breakpoint($sm-bp) {
+                    flex-direction: column;
+                    margin-bottom: 2rem;
+                }
             }
 
             .main-consultation__btnContainer {
@@ -760,6 +1186,11 @@
                 gap: 3.3rem;
                 align-items: center;
                 margin-top: 2rem;
+
+                @include breakpoint($sm-bp) {
+                    flex-direction: column;
+                    gap: 3rem;
+                }
 
                 button {
                     background: #FFFFFF;
@@ -778,6 +1209,10 @@
                     gap: 2rem;
                     width: 48%;
 
+                    @include breakpoint($sm-bp) {
+                        width: 100%;
+                    }
+
                     svg {
                         width: 3rem;
                         height: 2rem;
@@ -792,35 +1227,22 @@
 .main-teachers {
     margin-top: 18rem;
 
-    .main-teachers__title {
-        display: flex;
-        justify-content: space-between;
+    @include breakpoint($xl-bp) {
+        margin-top: 9rem;
+    }
 
-        h2 {
-            font-weight: 700;
-            font-size: 4.6rem;
-            line-height: 120%;
-            letter-spacing: 0.01em;
-            font-feature-settings: 'pnum' on, 'lnum' on;
-            color: #000015;
+    button {
+        @include breakpoint($lb-bp) {
+            display: none;
         }
-
-        .main-licence__arrowsContainer {
-            display: flex;
-            gap: 2rem;
-
-            button {
-                background: none;
-                padding: 0rem;
-                border: none;
-            }
-        }
-
-        
     }
 
     .main-teachers__swiper {
         margin-top: 4rem;
+
+        @include breakpoint($sm-bp) {
+            margin-top: 3rem;
+        }
 
         .swiper-slide {
 
@@ -841,6 +1263,10 @@
                 font-feature-settings: 'pnum' on, 'lnum' on;
                 color: #000015;
                 margin-top: 1.5rem;
+
+                @include breakpoint($sm-bp) {
+                    margin-top: 1rem;
+                }
             }
 
             .main-teachers__subtitle {
@@ -851,6 +1277,173 @@
                 font-feature-settings: 'pnum' on, 'lnum' on;
                 color: #000015;
                 margin-top: 1rem;
+
+                @include breakpoint($sm-bp) {
+                    margin-top: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+.main-reviews {
+    margin-top: 18rem;
+
+    @include breakpoint($xl-bp) {
+        margin-top: 9rem;
+    }
+
+    button {
+        @include breakpoint($lb-bp) {
+            display: none;
+        }
+    }
+
+    .main-reviews__swiper {
+        margin-top: 4rem;
+
+        @include breakpoint($sm-bp) {
+            margin-top: 3rem;
+        }
+
+        .swiper-slide {
+            border: 0.1rem solid #36456F;
+            border-radius: 1rem;
+            overflow: hidden;
+            
+            .main-reviews__upperContainer {
+                display: flex;
+                padding-left: 2rem;
+                padding-top: 2rem;
+                padding-right: 2rem;
+                padding-bottom: 1.5rem;
+                gap: 1rem;
+
+                .main-reviews__imgContainer {
+                    width: 15%;
+                    img {
+                        width: 100%;
+                        object-fit: contain;
+                    }
+                }
+
+                p {
+                    font-weight: 400;
+                    font-size: 1.8rem;
+                    line-height: 2.5rem;
+                    letter-spacing: 0.01em;
+                    font-feature-settings: 'pnum' on, 'lnum' on;
+                    color: #000015;
+                    width: 82%;
+
+                    @include breakpoint($sm-bp) {
+                        font-size: 1.6rem;
+                        line-height: 2.2rem;
+                    }
+                }
+            }
+
+            .main-reviews__downContainer {
+                display: flex;
+                padding: 2rem;
+                gap: 1rem;
+                background: #EBEDF1;
+                align-items: center;
+
+
+                .main-reviews__imgContainer {
+                    width: 22%;
+                    img {
+                        width: 100%;
+                        object-fit: contain;
+                        border-radius: 50%;
+                    }
+                }
+
+                .main-reviews__textContainer {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.4rem;
+
+                    .main-reviews__title {
+                        font-weight: 500;
+                        font-size: 2rem;
+                        line-height: 2.7rem;
+                        letter-spacing: 0.01em;
+                        font-feature-settings: 'pnum' on, 'lnum' on;
+                        color: #000015;
+
+                        @include breakpoint($sm-bp) {
+                            font-size: 1.8rem;
+                            line-height: 2.5rem;
+                        }
+                    }
+
+                    .main-reviews__subtitle {
+                        font-weight: 400;
+                        font-size: 1.6rem;
+                        line-height: 2.2rem;
+                        letter-spacing: 0.01em;
+                        font-feature-settings: 'pnum' on, 'lnum' on;
+                        color: #000015;
+
+                        @include breakpoint($sm-bp) {
+                            font-size: 1.4rem;
+                            line-height: 1.9rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main-partners {
+    margin-top: 17.8rem;
+
+    @include breakpoint($xl-bp) {
+        margin-top: 9rem;
+    }
+
+    .main-partners__content {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 4rem;
+        gap: 1.3rem;
+
+        @include breakpoint($ssh-bp) {
+            justify-content: center;
+        }
+
+        @include breakpoint($sm-bp) {
+            margin-top: 3rem;
+        }
+
+        .main-partners__imgContainer {
+            width: 16%;
+            filter: grayscale(1);
+            transition: all 0.3s linear;
+
+            @include breakpoint($xl-bp) {
+                width: 23.9%;
+            }
+
+            @include breakpoint($lb-bp) {
+                width: 31.8%;
+            }
+
+            @include breakpoint($sm-bp) {
+                width: 48%;
+            }
+
+            &:hover {
+                filter: none;
+                transition: all 0.3s linear;
+            }
+
+            img {
+                width: 100%;
+                object-fit: contain;
             }
         }
     }

@@ -8,21 +8,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let mainbranchswiper = new Swiper(".main-branch__swiper", {
         navigation: {
-          nextEl: ".main-branch__title .main-branch__arrowRight",
-          prevEl: ".main-branch__title .main-branch__arrowLeft",
+          nextEl: ".main-branch .main-branch__arrowRight",
+          prevEl: ".main-branch .main-branch__arrowLeft",
         },
-        slidesPerView: 3,
+        slidesPerView: 1,
         spaceBetween: 20,
+        breakpoints: {
+            1024: {
+                slidesPerView: 3,
+            },
+            651: {
+                slidesPerView: 2,
+            },
+        }
     });
     
 
     let licenceSwiper = new Swiper(".main-licence__documentContainer", {
         navigation: {
-          nextEl: ".main-licence__arrowsContainer .main-branch__arrowRight",
-          prevEl: ".main-licence__arrowsContainer .main-branch__arrowLeft",
+          nextEl: ".licenceArrowRight",
+          prevEl: ".licenceArrowLeft",
         },
-        slidesPerView: 3,
+        slidesPerView: 1,
         spaceBetween: 20,
+        breakpoints: {
+            1024: {
+                slidesPerView: 3,
+            },
+
+            500: {
+                slidesPerView: 2,
+            },
+        },
+    });
+
+    let accreditationSwiper = new Swiper(".main-accreditation__documentContainer", {
+        navigation: {
+          nextEl: ".accreditationArrowRight",
+          prevEl: ".accreditationArrowLeft",
+        },
+        slidesPerView: 1,
+        spaceBetween: 20,
+        breakpoints: {
+            1024: {
+                slidesPerView: 3,
+            },
+
+            500: {
+                slidesPerView: 2,
+            },
+        },
     });
 
     let mainNewsSwiper = new Swiper(".main-news__content", {
@@ -31,20 +66,50 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     let mainHowToLearnSwiper = new Swiper(".main-howToLearn__swiper", {
-        slidesPerView: 2,
+        slidesPerView: 1,
         spaceBetween: 20,
         navigation: {
             nextEl: ".main-howToLearn .main-branch__arrowRight",
             prevEl: ".main-howToLearn .main-branch__arrowLeft",
         },
+        breakpoints: {
+            1024: {
+                slidesPerView: 2,
+            },
+        },
     });
 
     let mainTeachersSwiper = new Swiper(".main-teachers__swiper", {
-        slidesPerView: 4,
+        slidesPerView: 1,
         spaceBetween: 20,
         navigation: {
             nextEl: ".main-teachers .main-branch__arrowRight",
             prevEl: ".main-teachers .main-branch__arrowLeft",
+        },
+        breakpoints: {
+            1024: {
+                slidesPerView: 4,
+            },
+            500: {
+                slidesPerView: 2,
+            },
+        },
+    });
+
+    let mainReviewsSwiper = new Swiper(".main-reviews__swiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: {
+            nextEl: ".main-reviews .main-branch__arrowRight",
+            prevEl: ".main-reviews .main-branch__arrowLeft",
+        },
+        breakpoints: {
+            1024: {
+                slidesPerView: 4,
+            },
+            650: {
+                slidesPerView: 2,
+            },
         },
     });
 })
