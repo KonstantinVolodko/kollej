@@ -1,0 +1,17 @@
+.documents {
+  width: 100%;
+
+  .dropdown-container {
+    &:not(:first-child) {
+      border-top: 0.1rem solid #ebedf1;
+    }
+
+    .dropdown-link {
+      padding-top: 1rem;
+    }
+  }
+
+  .dropdown-container + .dropdown-container {
+    margin-top: 1rem;
+  }
+}
