@@ -91,3 +91,33 @@
 .news__more-btn {
   margin: 4rem auto 0;
 }
+
+.news-fixed {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+
+  font-size: 1.8rem;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+}
+.news-fixed__text {
+  position: sticky;
+  left: 0;
+  top: 5rem;
+
+  width: 100%;
+  max-width: 85rem;
+}
+.news-fixed__images {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  img {
+    width: 100%;
+    max-width: 85rem;
+  }
+}

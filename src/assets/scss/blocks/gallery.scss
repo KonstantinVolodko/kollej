@@ -2,6 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+
+  img {
+    border-radius: 1rem;
+  }
 }
 .gallery-photo-33 {
   width: calc(33.3333% - 1.3333rem);
