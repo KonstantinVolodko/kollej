@@ -81,8 +81,33 @@ svg {
 
 
 
+@import './blocks/page.scss';
+@import './blocks/btns.scss';
+@import './blocks/breadcrumbs.scss';
+@import './blocks/dropdown.scss';
+@import './blocks/links-table.scss';
+
 @import './blocks/header.scss';
 @import './blocks/swiper.scss';
 @import './blocks/footer.scss';
 @import './blocks/main.scss';
+
+@import './blocks/main.scss';
+
+@import './blocks/general-info.scss';
+@import './blocks/documents.scss';
+@import './blocks/other.scss';
+@import './blocks/students.scss';
+
+@import './blocks/practice.scss';
+
+@import './blocks/links.scss';
+
+@import './blocks/news.scss';
+
+@import './blocks/gallery.scss';
+
+@import './blocks/edu-info.scss';
+
+@import './blocks/management-info.scss';
 
