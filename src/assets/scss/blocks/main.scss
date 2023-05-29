@@ -482,158 +482,162 @@
         margin-top: 4rem;
 
         .swiper-slide {
-            border: 0.1rem solid #36456F;
-            border-radius: 1rem;
-            position: relative;
-            padding-bottom: 22rem;
-            overflow: hidden;
-            max-height: 50rem;
 
-            .main-branch__slideTitle {
-                font-weight: 600;
-                font-size: 3.2rem;
-                line-height: 4.4rem;
-                letter-spacing: 0.01em;
-                font-feature-settings: 'pnum' on, 'lnum' on;
-                color: #000015;
-                padding: 2rem 2rem 0rem 2rem;
-                min-height: 9rem;
-
-                @include breakpoint($ssh-bp) {
-                    min-height: 13.2rem;
-                }
-
-                @include breakpoint($sm-bp) {
-                    font-size: 2.4rem;
-                    line-height: 3.3rem;
-                    min-height: 9.3rem;
-                }
-            }
-
-            .main-branch__textContainer {
-                display: flex;
-                flex-direction: column;
-                gap: 2rem;
-                margin-top: 2rem;
-                padding: 0.2rem 2rem 0rem 2rem;
-
-                div {
-                    .main-branch__swiperTitle {
-                        font-weight: 500;
-                        font-size: 2.4rem;
-                        line-height: 3.3rem;
-                        letter-spacing: 0.01em;
-                        font-feature-settings: 'pnum' on, 'lnum' on;
-                        color: #000015;
-
-                        @include breakpoint($sm-bp) {
-                            font-size: 2rem;
-                            line-height: 2.7rem;
-                        }
-                    }
-
-                    .main-branch__swiperSubtitle {
-                        font-weight: 400;
-                        font-size: 1.8rem;
-                        line-height: 2.5rem;
-                        letter-spacing: 0.01em;
-                        font-feature-settings: 'pnum' on, 'lnum' on;
-                        color: #000015;
-
-                        @include breakpoint($sm-bp) {
-                            font-size: 1.6rem;
-                            line-height: 2.2rem;
-                        }
-                    }
-                }
-            }
-
-
-
-            .main-branch__slideBlock {
-                background: #36456F;
+            .main-branch__swiperSlideContainer {
+                border: 0.1rem solid #36456F;
                 border-radius: 1rem;
-                padding: 2rem;
-                position: absolute;
-                bottom: -9rem;
-                width: 93%;
-                transition: all 0.4s;
-
-                @include breakpoint($ssh-bp) {
-                    width: 92%;
-                }
-
-                @include breakpoint($xl-bp) {
-                    width: 91.2%;
-                }
-
-                @include breakpoint($lb-bp) {
-                    width: 93.2%;
-                }
-
-                @include breakpoint($sm-bp) {
-                    width: 88.2%;
-                }
-
-                .main-branch__slidePrice {
+                position: relative;
+                padding-bottom: 22rem;
+                overflow: hidden;
+                max-height: 50rem;
+    
+                .main-branch__slideTitle {
                     font-weight: 600;
                     font-size: 3.2rem;
                     line-height: 4.4rem;
                     letter-spacing: 0.01em;
                     font-feature-settings: 'pnum' on, 'lnum' on;
-                    color: #FFFFFF;
-
+                    color: #000015;
+                    padding: 2rem 2rem 0rem 2rem;
+                    min-height: 9rem;
+    
+                    @include breakpoint($ssh-bp) {
+                        min-height: 13.2rem;
+                    }
+    
                     @include breakpoint($sm-bp) {
+                        font-size: 2.4rem;
+                        line-height: 3.3rem;
+                        min-height: 9.3rem;
+                    }
+                }
+    
+                .main-branch__textContainer {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2rem;
+                    margin-top: 2rem;
+                    padding: 0.2rem 2rem 0rem 2rem;
+    
+                    div {
+                        .main-branch__swiperTitle {
+                            font-weight: 500;
+                            font-size: 2.4rem;
+                            line-height: 3.3rem;
+                            letter-spacing: 0.01em;
+                            font-feature-settings: 'pnum' on, 'lnum' on;
+                            color: #000015;
+    
+                            @include breakpoint($sm-bp) {
+                                font-size: 2rem;
+                                line-height: 2.7rem;
+                            }
+                        }
+    
+                        .main-branch__swiperSubtitle {
+                            font-weight: 400;
+                            font-size: 1.8rem;
+                            line-height: 2.5rem;
+                            letter-spacing: 0.01em;
+                            font-feature-settings: 'pnum' on, 'lnum' on;
+                            color: #000015;
+    
+                            @include breakpoint($sm-bp) {
+                                font-size: 1.6rem;
+                                line-height: 2.2rem;
+                            }
+                        }
+                    }
+                }
+    
+    
+    
+                .main-branch__slideBlock {
+                    background: #36456F;
+                    border-radius: 1rem;
+                    padding: 2rem;
+                    position: absolute;
+                    bottom: -9rem;
+                    width: 93%;
+                    transition: all 0.4s;
+    
+                    @include breakpoint($ssh-bp) {
+                        width: 92%;
+                    }
+    
+                    @include breakpoint($xl-bp) {
+                        width: 91.2%;
+                    }
+    
+                    @include breakpoint($lb-bp) {
+                        width: 93.2%;
+                    }
+    
+                    @include breakpoint($sm-bp) {
+                        width: 88.2%;
+                    }
+    
+                    .main-branch__slidePrice {
+                        font-weight: 600;
                         font-size: 3.2rem;
                         line-height: 4.4rem;
+                        letter-spacing: 0.01em;
+                        font-feature-settings: 'pnum' on, 'lnum' on;
+                        color: #FFFFFF;
+    
+                        @include breakpoint($sm-bp) {
+                            font-size: 3.2rem;
+                            line-height: 4.4rem;
+                        }
                     }
-                }
-
-                .main-branch__slideSubtitle {
-                    font-weight: 500;
-                    font-size: 2rem;
-                    line-height: 2.7rem;
-                    letter-spacing: 0.01em;
-                    font-feature-settings: 'pnum' on, 'lnum' on;
-                    color: #FFFFFF;
-                    margin-top: 1rem;
-
-                    @include breakpoint($sm-bp) {
-                        font-size: 2rem;
-                        line-height: 2.7rem;    
-                    }
-                }
-
-                button {
-                    margin-top: 3rem;
-                    background: #FFFFFF;
-                    border: 0.1rem solid #FFFFFF;
-                    border-radius: 0.6rem;
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 2rem;
-                    padding: 1.2rem 0rem;
-
-                    font-weight: 500;
-                    font-size: 2rem;
-                    line-height: 2.7rem;
-                    letter-spacing: 0.01em;
-                    font-feature-settings: 'pnum' on, 'lnum' on;
-                    color: #000015;
-
-                    @include breakpoint($sm-bp) {
+    
+                    .main-branch__slideSubtitle {
+                        font-weight: 500;
                         font-size: 2rem;
                         line-height: 2.7rem;
+                        letter-spacing: 0.01em;
+                        font-feature-settings: 'pnum' on, 'lnum' on;
+                        color: #FFFFFF;
+                        margin-top: 1rem;
+    
+                        @include breakpoint($sm-bp) {
+                            font-size: 2rem;
+                            line-height: 2.7rem;    
+                        }
                     }
-
-                    svg {
-                        width: 3rem;
-                        height: 2rem;
+    
+                    button {
+                        margin-top: 3rem;
+                        background: #FFFFFF;
+                        border: 0.1rem solid #FFFFFF;
+                        border-radius: 0.6rem;
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 2rem;
+                        padding: 1.2rem 0rem;
+    
+                        font-weight: 500;
+                        font-size: 2rem;
+                        line-height: 2.7rem;
+                        letter-spacing: 0.01em;
+                        font-feature-settings: 'pnum' on, 'lnum' on;
+                        color: #000015;
+    
+                        @include breakpoint($sm-bp) {
+                            font-size: 2rem;
+                            line-height: 2.7rem;
+                        }
+    
+                        svg {
+                            width: 3rem;
+                            height: 2rem;
+                        }
                     }
                 }
             }
+            
 
             .redBg {
                 background: #A6414D;
