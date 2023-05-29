@@ -24,9 +24,14 @@
             width: 65%;
         }
 
-        img {
-            width: 100%;
-            object-fit: contain;
+        svg {
+            width: 30rem;
+            height: 8rem;
+
+            @include breakpoint($sm-bp) {
+                width: 18rem;
+                height: 5rem;
+            }
         }
     }
 
