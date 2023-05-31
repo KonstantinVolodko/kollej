@@ -1,3 +1,4 @@
+
 .footer {
     margin-top: 18rem;
     background: #EBEDF1;
@@ -24,14 +25,9 @@
             width: 65%;
         }
 
-        svg {
-            width: 30rem;
-            height: 8rem;
-
-            @include breakpoint($sm-bp) {
-                width: 18rem;
-                height: 5rem;
-            }
+        img {
+            width: 100%;
+            object-fit: contain;
         }
     }
 
@@ -207,6 +203,3 @@
             text-decoration: none;
         }
     }
-
-    
-}
