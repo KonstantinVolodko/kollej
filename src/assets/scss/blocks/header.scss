@@ -1,3 +1,4 @@
+
 .header {
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -36,10 +37,11 @@
                     width: 55%;
                 }
 
-                img {
-                    width: 100%;
-                    object-fit: contain;
-    
+                svg {
+                    @include breakpoint($sm-bp) {
+                        width: 18rem;
+                        height: 5rem;
+                    }
                 }
             }
     
@@ -83,6 +85,7 @@
             margin-left: 6rem;
             padding-top: 1rem;
             gap: 2.4rem;
+            align-items: center;
 
             @include breakpoint($xl-bp) {
                 display: none;
