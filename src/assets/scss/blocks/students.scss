@@ -1,0 +1,12 @@
+.schedule-students {
+  width: 100%;
+
+  .dropdown-link {
+    font-size: 2.4rem;
+    font-weight: 500;
+  }
+
+  .dropdown-container + .dropdown-container {
+    margin-top: 4rem;
+  }
+}

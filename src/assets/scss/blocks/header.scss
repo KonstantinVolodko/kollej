@@ -1,0 +1,197 @@
+.header {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    .header-upperContainer {
+        display: flex;
+
+        @include breakpoint($xl-bp) {
+            justify-content: space-between;
+        }
+    
+        .header-upperContainer__logoContainer {
+            display: flex;
+            align-items: center;
+            gap: 3.1rem;
+            width: 26.5%;
+
+            @include breakpoint($xl-bp) {
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .header-upperContainer__helper {
+                display: flex;
+                gap: 3.1rem;
+            }
+
+            .header-upperContainer__imgContainer {
+                width: 100%;
+    
+                @include breakpoint($xl-bp) {
+                    width: 30%;
+                }
+
+                @include breakpoint($sm-bp) {
+                    width: 55%;
+                }
+
+                img {
+                    width: 100%;
+                    object-fit: contain;
+    
+                }
+            }
+    
+            .header-upperContainer__burgerContainer {
+                display: flex;
+                flex-direction: column;
+                gap: 1.2rem;
+    
+                li:first-child {
+                    width: 4.5rem;
+                    height: 0.2rem;
+                    background: #36456F;
+                }
+    
+                li:nth-child(2) {
+                    width: 4.5rem;
+                    height: 0.2rem;
+                    background: #A6414D;
+                }
+    
+                li:last-child {
+                    width: 3rem;
+                    height: 0.2rem;
+                    background: #36456F;
+                }
+            }
+    
+            .header-upperContainer__searchContainer {
+                fill: transparent;
+    
+                svg {
+                    width: 2.6rem;
+                    height: 2.6rem;
+                }
+            }
+        }
+
+        .header-upperContainer__licence {
+            display: flex;
+            width: 35%;
+            margin-left: 6rem;
+            padding-top: 1rem;
+            gap: 2.4rem;
+
+            @include breakpoint($xl-bp) {
+                display: none;
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 1.4rem;
+                line-height: 1.9rem;
+                letter-spacing: 0.01em;
+                font-feature-settings: 'pnum' on, 'lnum' on;
+                color: #36456F;
+            }
+
+            p:first-child {
+                width: 59%;
+
+                @include breakpoint($ssh-bp) {
+                    width: 44%;
+                }
+            }
+
+            p:last-child {
+                // width: 43%;
+            }
+        }
+
+        .header-upperContainer__phoneContainer {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            width: 36.6%;
+
+            @include breakpoint($ssh-bp) {               
+                width: 46.6%;
+            }
+
+            @include breakpoint($xl-bp) {
+                display: none;
+            }
+
+            a {
+                display: flex;
+                gap: 0.8rem;
+                text-decoration: none;
+                align-items: center;
+
+                svg {
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    fill: transparent;
+                }
+
+                span {
+                    font-weight: 600;
+                    font-size: 2.4rem;
+                    line-height: 3.3rem;
+                    letter-spacing: 0.01em;
+                    font-feature-settings: 'pnum' on, 'lnum' on;
+                    color: #36456F;
+                    
+                }
+            }
+
+            button {
+                background: #FFFFFF;
+                border: 0.2rem solid #36456F;
+                border-radius: 0.6rem;
+                font-weight: 500;
+                font-size: 2rem;
+                line-height: 2.7rem;
+                letter-spacing: 0.01em;
+                font-feature-settings: 'pnum' on, 'lnum' on;
+                color: #36456F;
+                padding: 1.2rem 2rem;
+            }
+
+            svg {
+                width: 4rem;
+                height: 4rem;
+            }
+        }
+    }
+
+    .header-downContainer {
+        display: flex;
+        gap: 12.9rem;
+        margin-top: 1.7rem;
+        align-items: center;
+
+        @include breakpoint($ssh-bp) {
+            gap: 8.9rem;
+        }
+
+        @include breakpoint($xl-bp) {
+            display: none;
+        }
+
+        li {
+            a {
+                font-weight: 400;
+                font-size: 1.6rem;
+                line-height: 2.2rem;
+                text-align: center;
+                letter-spacing: 0.01em;
+                font-feature-settings: 'pnum' on, 'lnum' on;
+                color: #000015;
+                text-decoration: none;
+            }
+        }
+    }
+}
