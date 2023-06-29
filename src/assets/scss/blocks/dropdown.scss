@@ -4,6 +4,9 @@
   overflow: hidden;
   width: 100%;
   &.active {
+    .dropdown-list {
+      margin-top: 1.5rem;
+    }
     .dropdown-link {
       margin-bottom: 1rem;
 
@@ -18,12 +21,19 @@
     border-radius: 1rem;
     .dropdown-link {
       padding: 2rem;
+      @include breakpoint($xl-bp) {
+        padding: 1.5rem;
+      }
     }
   }
 }
 
 .dropdown-list-inner {
   padding: 2rem;
+  padding-top: 0;
+  @include breakpoint($xl-bp) {
+    padding: 1.5rem;
+  }
 
   h4,.h4 {
     margin-bottom: 0.8rem;
@@ -35,8 +45,17 @@
 }
 
 .columns-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  columns: 2;
+  gap: 8rem;
+  @include breakpoint($xl-bp) {
+    columns: 1;
+  }
+}
+.columns-block {
+  margin-top: 0.8rem;
+  &:first-child {
+    margin-top: 0;
+  }
 }
 .dropdown-link {
   display: flex;
@@ -54,7 +73,10 @@
 
   cursor: pointer;
   transition: all 0.2s linear;
-
+  @include breakpoint($xl-bp) {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
   svg {
     width: 100%;
     max-width: 3.4rem;
@@ -63,6 +85,9 @@
     fill: #36456f;
 
     transition: all 0.2s linear;
+    @include breakpoint($xl-bp) {
+      max-width: 1.6rem;
+    }
   }
 }
 .dropdown-list {

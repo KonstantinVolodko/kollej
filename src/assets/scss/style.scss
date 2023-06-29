@@ -79,6 +79,19 @@ svg {
   }
 }
 
+.paddingContainer-xl {
+  
+  @include breakpoint($xl-bp) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
 
 
 @import './blocks/page.scss';
@@ -110,4 +123,5 @@ svg {
 @import './blocks/edu-info.scss';
 
 @import './blocks/management-info.scss';
+@import './blocks/education-info.scss';
 

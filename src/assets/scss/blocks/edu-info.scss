@@ -1,6 +1,7 @@
 .table-wrapper {
-  overflow-x: auto;
-
+  overflow: auto;
+  width: 100%;
+  max-width: 100%;
   margin-bottom: 4rem;
 }
 
@@ -8,6 +9,7 @@ table {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   overflow: hidden;
+  line-height: normal;
   thead {
     font-size: 1.6rem;
 
@@ -83,4 +85,8 @@ table {
     grid-column: 2 / 3;
     grid-row: 1 / 3;
   }
+}
+
+.general-info {
+  width: 100%;
 }

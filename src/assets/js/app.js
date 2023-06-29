@@ -111,27 +111,39 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     },
   });
-});
 
-const dropdowns = document.querySelectorAll(".dropdown-container");
+  const dropdowns = document.querySelectorAll(".dropdown-container");
 
-if (dropdowns.length) {
-  dropdowns.forEach((el, i) => {
-    const dropdownLink = el.querySelector(".dropdown-link");
-    const dropdownList = el.querySelector(".dropdown-list");
+  if (dropdowns.length) {
+    dropdowns.forEach((el, i) => {
+      const dropdownLink = el.querySelector(".dropdown-link");
+      const dropdownList = el.querySelector(".dropdown-list");
 
-    if (el.classList.contains("active")) {
-      dropdownList.style.maxHeight = dropdownList.scrollHeight + "px";
-    }
-
-    dropdownLink.addEventListener("click", function () {
-      el.classList.toggle("active");
-
-      if (dropdownList.style.maxHeight) {
-        dropdownList.style.maxHeight = null;
-      } else {
+      if (el.classList.contains("active")) {
         dropdownList.style.maxHeight = dropdownList.scrollHeight + "px";
       }
+
+      dropdownLink.addEventListener("click", function () {
+        el.classList.toggle("active");
+
+        if (dropdownList.style.maxHeight) {
+          dropdownList.style.maxHeight = null;
+        } else {
+          dropdownList.style.maxHeight = dropdownList.scrollHeight + "px";
+        }
+      });
     });
-  });
-}
+  }
+
+  const aside = document.querySelector('.info-aside');
+
+  if (aside) {
+    const active = aside.querySelector('.active');
+    if (active) {
+      aside.insertAdjacentHTML('beforebegin', `<div class="info-aside-select">${active.innerHTML}</div>`)
+
+    }
+  }
+});
+
+
