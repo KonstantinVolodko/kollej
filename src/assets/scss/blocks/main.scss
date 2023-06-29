@@ -756,7 +756,7 @@
         .main-licence__arrowsContainer {
             display: flex;
             gap: 2rem;
-            justify-content: end;
+            justify-content: flex-end;
 
             button {
                 padding: 0rem;
@@ -948,7 +948,7 @@
 
     .main-news__btnContainer {
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
 
         button {
             padding: 1.2rem 2rem;

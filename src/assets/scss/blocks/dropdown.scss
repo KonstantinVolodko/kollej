@@ -2,7 +2,7 @@
   position: relative;
 
   overflow: hidden;
-
+  width: 100%;
   &.active {
     .dropdown-link {
       margin-bottom: 1rem;
@@ -12,6 +12,31 @@
       }
     }
   }
+
+  &.--dark {
+    background-color: #EBEDF1;
+    border-radius: 1rem;
+    .dropdown-link {
+      padding: 2rem;
+    }
+  }
+}
+
+.dropdown-list-inner {
+  padding: 2rem;
+
+  h4,.h4 {
+    margin-bottom: 0.8rem;
+    margin-top: 2rem;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.columns-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 .dropdown-link {
   display: flex;
