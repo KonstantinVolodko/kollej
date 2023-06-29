@@ -16,6 +16,7 @@ const panini = require("panini");
 const imagemin = require("gulp-imagemin");
 const del = require("del");
 const notify = require("gulp-notify");
+const fileinclude = require('gulp-file-include');
 const browserSync = require("browser-sync").create();
 
 /* Paths */
@@ -74,6 +75,10 @@ function html(cb) {
         data: srcPath + "data/",
       })
     )
+    .pipe(fileinclude({
+      prefix: '@',
+      basepath: '@file',
+    }))
     .pipe(dest(path.build.html))
     .pipe(browserSync.reload({ stream: true }));
 
