@@ -86,3 +86,10 @@
     color: #36456f;
   }
 }
+
+a.general-info__item-descr {
+  text-decoration: none;
+  &:hover {
+    color: #36456f;
+  }
+}
