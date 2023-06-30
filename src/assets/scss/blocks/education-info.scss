@@ -1,0 +1,174 @@
+.education-info {
+  @include breakpoint($xl-bp) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.mattech-info__inner {
+  display: grid;
+  grid-template-columns: 1fr 56rem;
+  gap: 2rem;
+  width: 100%;
+  @include breakpoint($xl-bp) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.mattech-info-l {
+  @include breakpoint($xl-bp) {
+    order: 1;
+  }
+  p {
+    margin-bottom: 2rem;
+    font-size: inherit;
+    line-height: inherit;
+  }
+  ul {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  h3 {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.mattech-info-r {
+  width: 100%;
+}
+
+.mattech-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background-color: #EBEDF1;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.mattech-arrows {
+  display: flex;
+  gap: 4rem;
+  @include breakpoint($xl-bp) {
+    gap: 1.5rem;
+  }
+}
+
+.mattech-arrow {
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='38' viewBox='0 0 20 38' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 0.999999L19 19L0.999998 37' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 0;
+  width: 2rem;
+  height: 3.8rem;
+  display: inline-block;
+  background-color: unset;
+  border: 0;
+  border-radius: 0;
+  @include breakpoint($xl-bp) {
+    width: 1.5rem;
+    height: 2rem;
+  }
+  &.prev {
+    transform: rotate(180deg);
+  }
+}
+
+.mattech-swiper.swiper {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  position: sticky;
+  top: calc(var(--headerH) + 1rem);
+  left: 0;
+  @include breakpoint($xl-bp) {
+    position: relative;
+    top: 0;
+  }
+  .swiper-slide {
+    img {
+      width: 100%;
+      height: 50rem;
+      object-fit: cover;
+      @include breakpoint($xl-bp) {
+        height: 30rem;
+      }
+    }
+  }
+}
+
+.mattech-link {
+  background-color: #EBEDF1;
+  border-radius: 1rem;
+  padding: 1.2rem 2rem;
+  font-size: 2rem;
+  line-height: 2.7rem;
+  font-weight: 500;
+  color: #36456F;
+  @include breakpoint($xl-bp) {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
+  a {
+    color: #36456F;
+    display: inline;
+    position: relative;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: 0.1rem;
+  }
+}
+
+.col-span-2 {
+  grid-column: 2 span;
+  width: 100%;
+}
+
+.dostupenv-info-text {
+  max-width: 70.5rem;
+  width: 100%;
+  p {
+    margin-bottom: 2rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.dostupenv-swiper {
+  .dostupenv-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    @include breakpoint($xl-bp) {
+      display: flex;
+      gap: 0;
+    }
+    li {
+      padding-left: 0;
+      margin-right: 0;
+      @include breakpoint($xl-bp) {
+        width: 100%;
+        height: 26.5rem;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &::before {
+        content: unset;
+      }
+    }
+  }
+}
