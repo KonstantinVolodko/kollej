@@ -3,6 +3,99 @@
   width: 100%;
   max-width: 100%;
   margin-bottom: 4rem;
+  &.--education {
+    padding-right: 0;
+  }
+
+  &.--dostup-env {
+    margin-bottom: 0;
+    @include breakpoint($xl-bp) {
+      padding-right: 0;
+    }
+    thead {
+      display: flex;
+      flex-direction: column;
+    }
+    tbody {
+      display: flex;
+      flex-direction: column;
+      border: 0.1rem solid #ebedf1;
+      border-radius: 1rem;
+    }
+    tr {
+      display: flex;
+      align-items: center;
+      &:first-child {
+        & > * {
+          border-top: 0;
+        }
+      }
+      & > * {
+        min-height: 9rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &:nth-child(1) {
+          width: 18rem;
+        }
+        &:nth-child(2) {
+          width: 52rem;
+        }
+        &:last-child {
+          border-right: 0;
+        }
+      }
+      td {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  &.--dostup-env2 {
+    margin-bottom: 0;
+    @include breakpoint($xl-bp) {
+      padding-right: 0;
+    }
+    thead {
+      display: flex;
+      flex-direction: column;
+    }
+    tbody {
+      display: flex;
+      flex-direction: column;
+      border: 0.1rem solid #ebedf1;
+      border-radius: 1rem;
+    }
+    tr {
+      display: flex;
+      &:first-child {
+        & > * {
+          border-top: 0;
+
+        }
+      }
+      & > * {
+        min-height: 9rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        &:nth-child(1) {
+          width: 39rem;
+        }
+        &:nth-child(2) {
+          width: 31rem;
+        }
+        &:last-child {
+          border-right: 0;
+        }
+      }
+      td {
+        border-bottom: 0;
+      }
+    }
+  }
+  
 }
 
 table {
@@ -10,6 +103,25 @@ table {
   border-top-right-radius: 1rem;
   overflow: hidden;
   line-height: normal;
+
+  tbody {
+    th {
+      background-color: #EBEDF1;
+      font-size: 1.6rem;
+      line-height: 2.2rem;
+      padding: 1.2rem 1.5rem;
+      text-align: start;
+      font-weight: 500;
+
+      a {
+        font-size: 1.4rem;
+        line-height: 2rem;
+        color: #000;
+      }
+    }
+  }
+
+
   thead {
     font-size: 1.6rem;
 
@@ -34,6 +146,12 @@ table {
     }
   }
 
+  tbody {
+    th {
+      border-top: 0.1rem solid #ffffff;
+    }
+  }
+
   tr {
     border-bottom: none;
   }
@@ -44,20 +162,30 @@ table {
 
     padding: 1.2rem 1.5rem;
 
-    border: 0.1rem solid #ebedf1;
+    border: 0.1rem solid #ebedf1; 
   }
 
   tr:last-child td:last-child {
     border-bottom-right-radius: 1rem;
   }
 
-  tr:last-child td:first-child {
-    border-bottom-left-radius: 1rem;
+  tbody {
+    tr:last-child th:first-child,
+    tr:last-child td:first-child {
+      border-bottom-left-radius: 1rem;
+    }
   }
+
 
   a {
     color: #36456f;
     text-decoration: none;
+  }
+}
+
+.edu-info {
+  @include breakpoint($xl-bp) {
+    width: 100%;
   }
 }
 
@@ -66,7 +194,10 @@ table {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, auto);
   gap: 2rem;
-
+  @include breakpoint($xl-bp) {
+    display: flex;
+    flex-direction: column;
+  }
   .info__item:first-child {
     grid-column: 1 / 2;
     grid-row: 1 / 2;

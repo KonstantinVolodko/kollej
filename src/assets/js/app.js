@@ -1,7 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
   //= components/
 
+  const xl = matchMedia('(max-width: 1024px)');
+
   Fancybox.bind("[data-fancybox]", {});
+
+  const header = document.querySelector('.header');
+
+  if (header) {
+    let headerH = header.getBoundingClientRect().height;
+
+    document.documentElement.style.setProperty('--headerH', headerH + 'px')
+
+    window.addEventListener('resize', () => {
+      const header = document.querySelector('.header');
+      headerH = header.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--headerH', headerH + 'px')
+    })
+  }
 
   let mainbranchswiper = new Swiper(".main-branch__swiper", {
     navigation: {
@@ -112,6 +128,34 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
+  new Swiper(".mattech-swiper", {
+    spaceBetween: 20,
+    navigation: {
+      nextEl: ".next",
+      prevEl: ".prev",
+    }
+  })
+
+  let init = false;
+  let swiperDostup;
+  function swiperCard() {
+    if (xl.matches) {
+      if (!init) {
+        init = true;
+        swiperDostup = new Swiper(".dostupenv-swiper", {
+          direction: "horizontal",
+          slidesPerView: "auto",
+          spaceBetween: 20,
+        });
+      }
+    } else if (init) {
+      swiperDostup.destroy();
+      init = false;
+    }
+  }
+  swiperCard();
+  window.addEventListener("resize", swiperCard);
+
   const dropdowns = document.querySelectorAll(".dropdown-container");
 
   if (dropdowns.length) {
@@ -140,10 +184,18 @@ document.addEventListener("DOMContentLoaded", () => {
   if (aside) {
     const active = aside.querySelector('.active');
     if (active) {
-      aside.insertAdjacentHTML('beforebegin', `<div class="info-aside-select">${active.innerHTML}</div>`)
-
+      const infoAside = document.createElement('div');
+      infoAside.classList.add('info-aside-select');
+      infoAside.innerHTML = active.innerHTML;
+      infoAside.addEventListener('click', function () {
+        this.classList.toggle('active');
+      })
+      aside.parentElement.insertBefore(infoAside, aside);
     }
+
   }
+
+
 });
 
 

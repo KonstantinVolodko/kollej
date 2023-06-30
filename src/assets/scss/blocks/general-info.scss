@@ -1,15 +1,13 @@
-.info-aside {
-  width: 100%;
-  min-width: 41.5rem;
-  max-width: 41.5rem;
-
-  overflow: hidden;
-
-  border: 0.1rem solid #36456f;
-  border-radius: 1rem;
-
+.info-aside-container {
   @include breakpoint($xl-bp) {
-    min-width: 0;
+    width: 100%;
+  }
+}
+
+.info-aside-wrapper {
+  @include breakpoint($xl-bp) {
+    width: 100%;
+    position: relative;
     margin-top: 4rem;
   }
 }
@@ -28,10 +26,12 @@
   color: white;
   width: 100%;
   border-radius: 1rem;
+
   @include breakpoint($xl-bp) {
     display: block;
     position: relative;
     padding-right: 4rem;
+    width: 100%;
 
     &::before {
       content: '';
@@ -44,6 +44,16 @@
       top: 50%;
       transform: translateY(-50%);
       right: 1.5rem;
+      transition: transform .3s;
+    }
+
+    &.active {
+      &::before {
+        transform: translateY(-50%) rotate(180deg) ;
+      }
+      &+.info-aside {
+        display: block;
+      }
     }
   }
 
@@ -51,12 +61,40 @@
     border-top: 0.1rem solid #36456f;
   }
 
-  &:hover {
-    background: lighten(#36456f, 55%);
-  }
-
 
 }
+
+
+
+.info-aside {
+  width: 100%;
+  min-width: 41.5rem;
+  max-width: 41.5rem;
+
+  overflow: hidden;
+
+  border: 0.1rem solid #36456f;
+  border-radius: 1rem;
+
+  @include breakpoint($xl-bp) {
+    min-width: 0;
+    position: absolute;
+    z-index: 5;
+    display: none;
+    background-color: #FFFFFF;
+    animation: fadeEffect .3s;
+  }
+}
+
+@keyframes fadeEffect {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 
 .info-aside__link {
   font-size: 1.6rem;
@@ -73,16 +111,16 @@
 
   &:hover {
     background: lighten(#36456f, 55%);
+
   }
+
 
   &.active {
     background: #36456f;
     color: white;
   }
 
-  @include breakpoint($xl-bp) {
-    display: none;
-  }
+
 }
 
 .general-info__inner {
@@ -92,6 +130,7 @@
 
   @include breakpoint($xl-bp) {
     flex-direction: column;
+    width: 100%;
   }
 }
 
@@ -112,13 +151,22 @@
     padding: 1.5rem;
     min-height: 17.8rem;
   }
-
+  &.justify-start {
+    justify-content: flex-start;
+    height: min-content;
+  }
   &.gi-item--25 {
     flex-basis: calc(33.3333% - 1.3333rem);
+    @include breakpoint($sm-bp) {
+      flex-basis: 100%;
+    }
   }
 
   &.gi-item--50 {
     flex-basis: calc(50% - 1rem);
+    @include breakpoint($sm-bp) {
+      flex-basis: 100%;
+    }
   }
 
   &.gi-item--100 {
@@ -130,6 +178,9 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 6rem;
+      @include breakpoint($xl-bp) {
+        grid-template-columns: 1fr;
+      }
     }
   }
 }
@@ -163,6 +214,16 @@
     display: inline-block;
 
     color: #36456f;
+  }
+
+  p {
+    margin-bottom: 2rem;
+    margin-top: 0.8rem;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 

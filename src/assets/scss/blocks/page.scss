@@ -11,18 +11,16 @@
     list-style: decimal inside;
   }
 
-  ul {
-    li {
-      padding-left: 2rem;
-      position: relative;
-      &::before {
-        content: '\2022';
-        margin-left: 0.5rem;
-        margin-right: 0.6rem;
-        left: 0;
-        top: 0;
-        position: absolute;
-      }
+  li {
+    padding-left: 2rem;
+    position: relative;
+    &::before {
+      content: '\2022';
+      margin-left: 0.5rem;
+      margin-right: 0.6rem;
+      left: 0;
+      top: 0;
+      position: absolute;
     }
   }
 }
@@ -35,7 +33,7 @@
   line-height: 120%;
   letter-spacing: 0.01em;
   color: #000015;
-
+  overflow-wrap: break-word;
   margin-bottom: 4rem;
   @include breakpoint($xl-bp) {
     font-size: 3.6rem;
@@ -67,6 +65,10 @@ ul {
   font-size: 1.8rem;
   line-height: 1.35;
   color: #000015;
+  @include breakpoint($xl-bp) {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
 }
 
 .h2 {
@@ -79,7 +81,7 @@ ul {
     line-height: 2.8rem;
   }
 }
-h3.h3 {
+h3,.h3 {
   font-size: 2.4rem;
   line-height: 3.2rem;
   font-weight: 500;
@@ -89,13 +91,21 @@ h3.h3 {
   }
 }
 h4,.h4 {
-  color: #000015;
-
   /* Header/4 */
   font-size: 2rem;
   font-weight: 500;
-  line-height: normal;
   letter-spacing: 0.02rem;
+  @include breakpoint($xl-bp) {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
+}
+
+.mob-h3 {
+  @include breakpoint($xl-bp) {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
 }
 
 .text-2 {
@@ -114,6 +124,10 @@ h4,.h4 {
   font-weight: 400;
   line-height: normal;
   letter-spacing: 0.016rem;
+  @include breakpoint($xl-bp) {
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+  }
 }
 
 .text-4 {
@@ -121,6 +135,13 @@ h4,.h4 {
   font-weight: 400;
   line-height: normal;
   letter-spacing: 0.014rem;
+}
+
+.mob-text-2 {
+  @include breakpoint($xl-bp) {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
 }
 
 .mt-20 {
