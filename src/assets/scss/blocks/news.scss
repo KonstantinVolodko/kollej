@@ -3,6 +3,18 @@
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 49.5rem;
   gap: 2rem;
+
+  @include breakpoint($xl-bp) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include breakpoint($lb-bp) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint($sm-bp) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .news-item {
