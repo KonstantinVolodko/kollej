@@ -22,6 +22,10 @@
     margin-bottom: 2.5rem;
 
     border-radius: 1rem;
+
+    @include breakpoint($sm-bp) {
+      width: 100%;
+    }
   }
   .info__item-content {
     display: flex;

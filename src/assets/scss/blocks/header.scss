@@ -38,6 +38,9 @@
                 }
 
                 svg {
+                    width: 31rem;
+                    height: 8.2rem;
+
                     @include breakpoint($sm-bp) {
                         width: 18rem;
                         height: 5rem;
@@ -87,6 +90,10 @@
             gap: 2.4rem;
             align-items: center;
 
+            @include breakpoint($ssh-bp) {
+                margin-left: 7rem;
+            }
+
             @include breakpoint($xl-bp) {
                 display: none;
             }
@@ -121,6 +128,7 @@
 
             @include breakpoint($ssh-bp) {               
                 width: 46.6%;
+                gap: 1rem;
             }
 
             @include breakpoint($xl-bp) {
