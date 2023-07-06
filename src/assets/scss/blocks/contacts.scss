@@ -6,40 +6,11 @@
         flex-direction: column;
     }
 
-    .contacts-content__text {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        border-radius: 1rem;
-        background: #EBEDF1;
-        padding: 2rem;
+    .info__item {
         width: 70%;
-
+    
         @include breakpoint($lb-bp) {
             width: 100%;
-        }
-
-        .contacts-content__item {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-
-            p:first-child {
-                color: #000015;
-                font-size: 2rem;
-                font-weight: 500;
-                line-height: normal;
-                letter-spacing: 0.02rem;
-            }
-
-            p:last-child, a {
-                color: #000015;
-                font-size: 1.6rem;
-                font-weight: 400;
-                line-height: normal;
-                letter-spacing: 0.016rem;
-                text-decoration: none;
-            }
         }
     }
 
@@ -60,3 +31,4 @@
         }
     }
 }
+
