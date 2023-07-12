@@ -11,17 +11,9 @@ html {
     font-size: calc(100vw / 1600 * 10);
   }
 
-  // @include breakpoint($cos-bp) {
-  //   font-size: calc(100vw / 1330 * 10);
-  // }
-
   @include breakpoint($xl-bp) {
     font-size: calc(100vw / 1024 * 10);
   }
-
-  // @include breakpoint($jb-bp) {
-  //   font-size: calc(100vw / 850 * 10);
-  // }
 
   @include breakpoint($lb-bp) {
     font-size: calc(100vw / 650 * 10);
@@ -48,6 +40,10 @@ body {
     font-style: normal;
 }
 
+body.modal-open {
+  overflow: hidden;
+  padding-right: calc(100vw - 100%);
+}
 
 img {
   image-rendering: crisp-edges;
@@ -124,4 +120,6 @@ svg {
 @import './blocks/management-info.scss';
 @import './blocks/education-info.scss';
 @import './blocks/contacts.scss';
+@import './blocks/edu-env-students.scss';
+@import './blocks/health.scss';
 

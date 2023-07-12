@@ -172,8 +172,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (dropdownList.style.maxHeight) {
           dropdownList.style.maxHeight = null;
+          if (window.matchMedia("(min-width: 1024px)").matches) {
+            document.querySelector('.modal-content').style.height = "100%"
+          }
+          
         } else {
           dropdownList.style.maxHeight = dropdownList.scrollHeight + "px";
+          if (window.matchMedia("(min-width: 1024px)").matches) {
+            document.querySelector('.modal-content').style.height = "fit-content"
+          }
+          
         }
       });
     });
@@ -194,6 +202,86 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
   }
+
+
+  class Modal {
+    constructor(modalId, openButtons) {
+      this.modal = document.getElementById(modalId);
+      this.openButtons = [];
+
+      if (typeof openButtons === 'string') {
+        // Если передана строка, считаем это классом
+        this.openButtons = Array.from(document.getElementsByClassName(openButtons));
+      } else if (Array.isArray(openButtons)) {
+        // Если передан массив, считаем это идентификаторами
+        this.openButtons = openButtons.map(buttonId => document.getElementById(buttonId));
+      }
+
+      this.openButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          this.open();
+          this.disableBodyScroll();
+        });
+      });
+
+      window.addEventListener('click', (event) => {
+        if (event.target === this.modal) {
+          this.close();
+          this.enableBodyScroll();
+        }
+      });
+
+      const closeButton = this.modal.querySelector('.close');
+      closeButton.addEventListener('click', () => {
+        this.close();
+        this.enableBodyScroll();
+      });
+    }
+
+    open() {
+      this.modal.style.display = 'block';
+      setTimeout(() => {
+        this.modal.classList.add('open');
+      }, 10);
+    }
+
+    close() {
+      this.modal.classList.remove('open');
+      setTimeout(() => {
+        this.modal.style.display = 'none';
+      }, 300);
+    }
+
+    disableBodyScroll() {
+      const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+      if (window.matchMedia("(min-width: 1024px)").matches) {
+        document.body.style.paddingRight = scrollBarWidth + 'px';
+      }
+      document.body.style.overflow = 'hidden';
+    }
+
+    enableBodyScroll() {
+      if (window.matchMedia("(min-width: 1024px)").matches) {
+        document.body.style.paddingRight = '';
+      }
+      document.body.style.overflow = '';
+    }
+  }
+
+  const headerMenu = new Modal('modal', 'header-upperContainer__burgerContainer');
+
+  let phoneContainer = document.querySelector('.header-upperContainer__phoneContainer')
+  let modalPhoneHelper = document.querySelector('.modal-content__phoneHelper')
+  let modalLicenceHelper = document.querySelector('.modal-content__licenceHelper')
+  let licenceContainer = document.querySelector('.header-upperContainer__licence')
+
+  if (window.matchMedia("(max-width: 1024px)").matches) {
+    modalPhoneHelper.innerHTML = phoneContainer.innerHTML
+    modalLicenceHelper.innerHTML = licenceContainer.innerHTML
+  }
+
+  let date = document.querySelector('.footer-politick p span')
+  date.innerHTML = new Date().getFullYear()
 
 
 });

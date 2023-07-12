@@ -1,0 +1,19 @@
+.area {
+    grid-area: 2 / 1 / 3 / 3;
+
+    @include breakpoint($xl-bp) {
+        padding: 0 4rem;
+    }
+
+    @include breakpoint($lb-bp) {
+        order: 3;
+    }
+
+    @include breakpoint($sm-bp) {
+        padding: 0 2rem;
+    }
+}
+
+.rowGap {
+    row-gap: 4rem;
+}

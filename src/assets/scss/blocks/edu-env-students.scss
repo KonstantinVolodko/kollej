@@ -1,0 +1,123 @@
+.edu-env-students {
+    display: flex;
+    gap: 2rem;
+
+    @include breakpoint($xl-bp) {
+        flex-direction: column;
+    }
+
+    .info-aside-wrapper {
+        @include breakpoint($xl-bp) {
+            margin-top: 0rem;
+        }
+    }
+
+    .info-aside {
+        @include breakpoint($xl-bp) {
+            max-width: 100%;
+        }
+    }
+}
+
+.col-span-2 {
+    border: 0.1rem solid #EBEDF1;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-top: 4rem;
+
+    @include breakpoint($xl-bp) {
+        margin-top: 2rem;
+    }
+
+    .mattech-link {
+        border-radius: 0rem;
+    }
+
+    .mattech-link:nth-child(even) {
+        background: #FFF;
+    }
+}
+
+.edu-env-students__content {
+
+    .hollow-btn {
+        width: fit-content;
+
+        @include breakpoint($lb-bp) {
+            width: 100%;
+        }
+    }
+
+    h2 {
+        color:#000015;
+        font-family: Manrope;
+        font-size: 3.2rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%;
+        letter-spacing: 0.032rem;
+        margin-top: 4rem;
+
+        @include breakpoint($xl-bp) {
+            margin-top: 2rem;
+        }
+
+        @include breakpoint($sm-bp) {
+            font-size: 2.4rem;
+        }
+    }
+
+    ul {
+        margin-top: 4rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        @include breakpoint($xl-bp) {
+            margin-top: 2rem;
+        }
+
+        li {
+            overflow: hidden;
+            border-radius: 1rem;
+            background:#EBEDF1;
+            width: 49%;
+
+            @include breakpoint($xl-bp) {
+                width: 48.9%;
+            }
+
+            @include breakpoint($lb-bp) {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            div {
+                width: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            p {
+                color:#000015;
+                font-size: 2.4rem;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                letter-spacing: 0.024rem;
+                padding: 1.2rem 2rem;
+
+                @include breakpoint($sm-bp) {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+}
